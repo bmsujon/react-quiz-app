@@ -10,7 +10,7 @@ export default function Login(props) {
     const loginCalled = () => {
         if(inputs.isAdmin) {
             // validate admin user
-            let currentAdminList = JSON.parse(localStorage.getItem('adminList'));
+            let currentAdminList = JSON.parse(localStorage.getItem('adminList')); //TODO:: create helper function for localstorage list getter & setter
             console.log(currentAdminList)
             if(currentAdminList.find(admin => admin.email === inputs.email && admin.password === inputs.password)) {
                 console.log("clear to login")
@@ -44,8 +44,8 @@ export default function Login(props) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <h3>Sign In</h3>
-
+            <h3 className="title">Sign In</h3>
+            <hr/>
             <div className="form-group">
                 <label>Email address</label>
                 <input type="email" className="form-control" placeholder="Enter email" name="email" onChange={handleInputChange}/>

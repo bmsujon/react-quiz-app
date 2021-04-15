@@ -73,12 +73,12 @@ function App() {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
-            <Route exact path='/' component={SignUp} />
+            <Route exact path='/react-quiz-app' component={SignUp} />
             <Route path="/sign-in" component={Login} />
-            {<Route path="/sign-up" component={SignUp} />}
             <Route path="/admin-panel" component={AdminPanel} />
             <Route path="/user-panel" component={UserPanel} />
             <Route path="/progress-message" component={ProgressMessage} />
+            {<Route path="/sign-up" component={SignUp} />}
           </Switch>
         </div>
       </div>

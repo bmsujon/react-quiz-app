@@ -32,7 +32,8 @@ export default function SignUp() {
     
     return (
         <form onSubmit={handleSubmit}>
-            <h3>Sign Up</h3>
+            <h3 className="title">Sign Up</h3>
+            <hr/>
 
             <div className="form-group">
                 <label>First name</label>
