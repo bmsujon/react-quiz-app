@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import Question from './Question';
+import { useHistory } from 'react-router-dom';
 
-export default function AdminPanel() {
-
+export default function AdminPanel(params, index) {
+	const history = useHistory();
 	let currentQuizList = JSON.parse(localStorage.getItem('quizList'));
 
 	const [currentList, setCurrentQuizList] = useState(currentQuizList);
@@ -22,10 +23,10 @@ export default function AdminPanel() {
 		console.log(currentQuizList.length);
 	}
 
-	const editQuestion = (e) => {
+	const editQuestion = (e, quiz) => {
 		e.preventDefault();
-		console.log("deleteQuestion")
-		// To DO
+		// console.log("deleteQuestion")
+		history.push({pathname: "/edit-question", params: quiz})
 	}
 
 	// console.log(currentQuizList)
@@ -38,7 +39,7 @@ export default function AdminPanel() {
 					<Question key={quiz.id} quiz = {quiz} index = {index} onClick={deleteQuestion} />
 					<div className="text-center">
 						<button type="button" className="btn btn-danger btn-sm" onClick={e => deleteQuestion(e, quiz)}>Delete</button>
-						<button type="button" className="btn btn-primary btn-sm" onClick={editQuestion}>Edit</button>
+						<button type="button" className="btn btn-primary btn-sm" onClick={e => editQuestion(e, quiz)}>Edit</button>
 					</div>
 					<hr/>
 					</>

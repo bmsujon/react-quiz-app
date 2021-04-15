@@ -8,6 +8,7 @@ import SignUp from "./components/SignUp";
 import AdminPanel from "./components/AdminPanel";
 import UserPanel from "./components/UserPanel";
 import ProgressMessage from "./components/ProgressMessage";
+import EditQuestion from "./components/EditQuestion";
 
 function App() {
 
@@ -78,6 +79,7 @@ function App() {
             <Route path="/admin-panel" component={AdminPanel} />
             <Route path="/user-panel" component={UserPanel} />
             <Route path="/progress-message" component={ProgressMessage} />
+            <Route path="/edit-question" component={EditQuestion} />
             {<Route path="/sign-up" component={SignUp} />}
           </Switch>
         </div>

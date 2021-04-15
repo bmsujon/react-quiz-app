@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default function Question(props, index) {
-	console.log(props)
+	// console.log(props)
 
 	let quiz = props.quiz;
 	const isAdmin = localStorage.getItem("isAdmin");
@@ -18,8 +18,8 @@ export default function Question(props, index) {
 
 
 	return(
-		<div className="container-fluid col-md-12">
-			<div className="row-fluid">
+		<div>
+			<div className="row">
 				<h3>{props.index + 1}. {quiz.question}</h3>
 			</div>
 			<div className="form-group">
